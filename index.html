@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>French&English — Apprendre le français et l'anglais</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">French&English</h1>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="lesson.html">Leçon démo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h2 class="title">Apprenez le français et l'anglais — Sérieux & Professionnel</h2>
+      <p class="subtitle">Leçons courtes, vocabulaire ciblé, prononciation et mini-quiz — conçu pour adultes.</p>
+
+      <div class="controls">
+        <label for="direction">Direction :</label>
+        <select id="direction" aria-label="Choisir la direction de la leçon">
+          <option value="fr-en">Français → English</option>
+          <option value="en-fr">English → Français</option>
+        </select>
+        <button id="startBtn" class="btn">Commencer la leçon</button>
+      </div>
+
+      <div class="cta">
+        <a class="btn outline" href="lesson.html?dir=fr-en">Exemple FR → EN</a>
+        <a class="btn outline" href="lesson.html?dir=en-fr">Exemple EN → FR</a>
+      </div>
+    </section>
+
+    <section class="features container">
+      <h3>Fonctionnalités</h3>
+      <ul class="feature-list">
+        <li>Leçons bilingues structurées</li>
+        <li>Flashcards avec synthèse vocale</li>
+        <li>Mini-quiz adaptatifs</li>
+        <li>Design responsive, adapté aux professionnels</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> French&English — Prototype professionnel</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
