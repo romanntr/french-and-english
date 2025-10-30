@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bilingue Studio — Apprenez le français et l'anglais</title>
+  <link rel="icon" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container header-grid">
+      <div class="brand">
+        <!-- logo SVG inline for crisp rendering -->
+        <img src="logo.svg" alt="Bilingue Studio" class="logo-img" />
+        <div class="brand-text">
+          <div class="site-title">Bilingue Studio</div>
+          <div class="slogan">Apprenez le français et l’anglais simplement.</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="index.html#lessons" class="nav-link">Leçons</a>
+        <a href="about.html" class="nav-link">À propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bilingue Studio</h1>
+      <p class="lead">Des leçons courtes, du vocabulaire ciblé, de la prononciation et des quiz — conçus pour adultes.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="lesson.html?dir=fr-en">Commencer : Salutations (Fr → En)</a>
+        <a class="btn btn-outline" href="lesson.html?dir=en-fr">Salutations (En → Fr)</a>
+      </div>
+    </section>
+
+    <section id="lessons" class="lessons">
+      <h2>Leçons disponibles</h2>
+      <div class="grid">
+        <a class="card" href="lesson.html?dir=fr-en">Salutations (Fr → En)</a>
+        <a class="card" href="lesson.html?dir=en-fr">Salutations (En → Fr)</a>
+        <a class="card" href="lesson.html?dir=fr-en-numbers">Les nombres (Fr → En)</a>
+        <a class="card" href="lesson.html?dir=en-fr-numbers">Les nombres (En → Fr)</a>
+        <a class="card" href="lesson.html?dir=fr-en-colors">Les couleurs (Fr → En)</a>
+        <a class="card" href="lesson.html?dir=en-fr-colors">Les couleurs (En → Fr)</a>
+        <a class="card" href="lesson.html?dir=fr-en-days">Jours (Fr → En)</a>
+        <a class="card" href="lesson.html?dir=en-fr-days">Jours (En → Fr)</a>
+        <a class="card" href="lesson.html?dir=fr-en-verbs">Verbes de base (Fr → En)</a>
+        <a class="card" href="lesson.html?dir=en-fr-verbs">Verbes de base (En → Fr)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Bilingue Studio — Prototype professionnel</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

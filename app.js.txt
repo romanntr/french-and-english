@@ -1,0 +1,251 @@
+// app.js — Bilingue Studio PRO (toutes les leçons + quiz + TTS)
+document.addEventListener('DOMContentLoaded', () => {
+
+  const lessons = {
+    // Salutations
+    'fr-en': {
+      title: 'Salutations — Français → English',
+      fromLang: 'fr-FR', toLang: 'en-US',
+      vocab: [
+        {word:'Bonjour', trans:'Hello / Good morning'},
+        {word:'Bonsoir', trans:'Good evening'},
+        {word:'Salut', trans:'Hi (informal)'},
+        {word:'Au revoir', trans:'Goodbye'},
+        {word:'S’il vous plaît', trans:'Please'},
+        {word:'Merci', trans:'Thank you'},
+        {word:'De rien', trans:"You're welcome"},
+        {word:'Comment ça va ?', trans:'How are you?'}
+      ],
+      quiz: [
+        {q:"Comment dit-on 'Merci' en anglais ?", options:['Please','Thank you','Goodbye','Hi'], a:1},
+        {q:"Traduction : 'How are you?'", options:['Comment ça va ?','Merci','De rien','Salut'], a:0},
+        {q:"Quelle expression est informelle ?", options:['S’il vous plaît','Salut','Bonsoir','De rien'], a:1}
+      ]
+    },
+
+    'en-fr': {
+      title: 'Greetings — English → Français',
+      fromLang: 'en-US', toLang: 'fr-FR',
+      vocab: [
+        {word:'Hello', trans:'Bonjour'},
+        {word:'Good night', trans:'Bonne nuit'},
+        {word:'Hi', trans:'Salut'},
+        {word:'Goodbye', trans:'Au revoir'},
+        {word:'Please', trans:'S’il vous plaît'},
+        {word:'Thank you', trans:'Merci'},
+        {word:"You're welcome", trans:'De rien'},
+        {word:'How are you?', trans:'Comment ça va ?'}
+      ],
+      quiz: [
+        {q:"How to say 'Merci' in English?", options:['Please','Thank you','Goodbye','Hi'], a:1},
+        {q:"Traduction : 'Bonjour'", options:['Good night','Hello',"You're welcome",'Please'], a:1},
+        {q:"Which is informal?", options:['Please','Goodbye','Hi','Thank you'], a:2}
+      ]
+    },
+
+    // Nombres
+    'fr-en-numbers': {
+      title: 'Les nombres — Français → English',
+      fromLang: 'fr-FR', toLang: 'en-US',
+      vocab: [
+        {word:'Un', trans:'One'},{word:'Deux', trans:'Two'},{word:'Trois', trans:'Three'},{word:'Quatre', trans:'Four'},
+        {word:'Cinq', trans:'Five'},{word:'Six', trans:'Six'},{word:'Sept', trans:'Seven'},{word:'Huit', trans:'Eight'},
+        {word:'Neuf', trans:'Nine'},{word:'Dix', trans:'Ten'}
+      ],
+      quiz: [
+        {q:"Comment dit-on 'Deux' en anglais ?", options:['One','Two','Three','Four'], a:1},
+        {q:"Traduction : 'Five'", options:['Quatre','Cinq','Six','Sept'], a:1},
+        {q:"Comment dit-on 'Dix' ?", options:['Nine','Eight','Ten','Twelve'], a:2}
+      ]
+    },
+
+    'en-fr-numbers': {
+      title: 'Numbers — English → Français',
+      fromLang:'en-US', toLang:'fr-FR',
+      vocab:[
+        {word:'One', trans:'Un'},{word:'Two', trans:'Deux'},{word:'Three', trans:'Trois'},{word:'Four', trans:'Quatre'},
+        {word:'Five', trans:'Cinq'},{word:'Six', trans:'Six'},{word:'Seven', trans:'Sept'},{word:'Eight', trans:'Huit'},
+        {word:'Nine', trans:'Neuf'},{word:'Ten', trans:'Dix'}
+      ],
+      quiz:[
+        {q:"How to say 'Cinq' in English?", options:['Five','Four','Six','Ten'], a:0},
+        {q:"Traduction : 'Nine'", options:['Neuf','Huit','Dix','Sept'], a:0},
+        {q:"Which number means 'Trois'?", options:['Three','Two','Four','Five'], a:0}
+      ]
+    },
+
+    // Couleurs
+    'fr-en-colors': {
+      title: 'Les couleurs — Français → English',
+      fromLang:'fr-FR', toLang:'en-US',
+      vocab:[
+        {word:'Rouge', trans:'Red'},{word:'Bleu', trans:'Blue'},{word:'Vert', trans:'Green'},{word:'Noir', trans:'Black'},
+        {word:'Blanc', trans:'White'},{word:'Jaune', trans:'Yellow'},{word:'Orange', trans:'Orange'},{word:'Rose', trans:'Pink'}
+      ],
+      quiz:[
+        {q:"Traduction : 'Bleu'", options:['Blue','Green','Black','White'], a:0},
+        {q:"Comment dit-on 'Rose' en anglais ?", options:['Pink','Red','Yellow','Orange'], a:0}
+      ]
+    },
+
+    'en-fr-colors': {
+      title: 'Colors — English → Français',
+      fromLang:'en-US', toLang:'fr-FR',
+      vocab:[
+        {word:'Red', trans:'Rouge'},{word:'Blue', trans:'Bleu'},{word:'Green', trans:'Vert'},{word:'Black', trans:'Noir'},
+        {word:'White', trans:'Blanc'},{word:'Yellow', trans:'Jaune'},{word:'Orange', trans:'Orange'},{word:'Pink', trans:'Rose'}
+      ],
+      quiz:[
+        {q:"How to say 'Rouge' in English?", options:['Red','Blue','Green','Pink'], a:0},
+        {q:"Traduction : 'Pink'", options:['Rose','Rouge','Noir','Blanc'], a:0}
+      ]
+    },
+
+    // Jours
+    'fr-en-days': {
+      title:'Les jours — Français → English', fromLang:'fr-FR', toLang:'en-US',
+      vocab:[
+        {word:'Lundi', trans:'Monday'},{word:'Mardi', trans:'Tuesday'},{word:'Mercredi', trans:'Wednesday'},
+        {word:'Jeudi', trans:'Thursday'},{word:'Vendredi', trans:'Friday'},{word:'Samedi', trans:'Saturday'},
+        {word:'Dimanche', trans:'Sunday'}
+      ],
+      quiz:[
+        {q:"Traduction : 'Vendredi'", options:['Friday','Thursday','Saturday','Monday'], a:0},
+        {q:"How to say 'Dimanche'?", options:['Sunday','Saturday','Monday','Friday'], a:0}
+      ]
+    },
+
+    'en-fr-days': {
+      title:'Days — English → Français', fromLang:'en-US', toLang:'fr-FR',
+      vocab:[
+        {word:'Monday', trans:'Lundi'},{word:'Tuesday', trans:'Mardi'},{word:'Wednesday', trans:'Mercredi'},
+        {word:'Thursday', trans:'Jeudi'},{word:'Friday', trans:'Vendredi'},{word:'Saturday', trans:'Samedi'},
+        {word:'Sunday', trans:'Dimanche'}
+      ],
+      quiz:[
+        {q:"How to say 'Mardi' in English?", options:['Tuesday','Thursday','Monday','Sunday'], a:0},
+        {q:"Traduction : 'Sunday'", options:['Dimanche','Samedi','Vendredi','Lundi'], a:0}
+      ]
+    },
+
+    // Verbes de base
+    'fr-en-verbs': {
+      title:'Verbes de base — Français → English', fromLang:'fr-FR', toLang:'en-US',
+      vocab:[
+        {word:'Être', trans:'To be'},{word:'Avoir', trans:'To have'},{word:'Aller', trans:'To go'},
+        {word:'Faire', trans:'To do/make'},{word:'Dire', trans:'To say'},{word:'Pouvoir', trans:'Can/To be able'},
+        {word:'Vouloir', trans:'To want'}
+      ],
+      quiz:[
+        {q:"Traduction : 'Avoir'", options:['To have','To be','To go','To do'], a:0},
+        {q:"How to say 'Faire' in English?", options:['To do/make','To have','To say','To go'], a:0}
+      ]
+    },
+
+    'en-fr-verbs': {
+      title:'Basic verbs — English → Français', fromLang:'en-US', toLang:'fr-FR',
+      vocab:[
+        {word:'To be', trans:'Être'},{word:'To have', trans:'Avoir'},{word:'To go', trans:'Aller'},
+        {word:'To do', trans:'Faire'},{word:'To say', trans:'Dire'},{word:'Can', trans:'Pouvoir'},
+        {word:'To want', trans:'Vouloir'}
+      ],
+      quiz:[
+        {q:"How to say 'Être' in English?", options:['To be','To have','To go','To do'], a:0},
+        {q:"Traduction : 'To want'", options:['Vouloir','Pouvoir','Faire','Aller'], a:0}
+      ]
+    }
+  }; // end lessons
+
+  // Utilitaires TTS
+  function speak(text, lang, rate=1) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const ut = new SpeechSynthesisUtterance(text);
+    ut.lang = lang || 'en-US';
+    ut.rate = rate;
+    window.speechSynthesis.speak(ut);
+  }
+
+  // Récupère param ?dir=...
+  const params = new URLSearchParams(window.location.search);
+  const dir = params.get('dir') || 'fr-en';
+  const lesson = lessons[dir];
+
+  // si on est sur lesson.html
+  if (document.getElementById('lesson-title')) {
+    if (!lesson) {
+      document.getElementById('lesson-title').textContent = 'Leçon non trouvée';
+      return;
+    }
+
+    document.getElementById('lesson-title').textContent = lesson.title;
+
+    // vocab
+    const vocabList = document.getElementById('vocab-list');
+    vocabList.innerHTML = '';
+    lesson.vocab.forEach((item, idx) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="word"><strong>${item.word}</strong> — <span class="trans">${item.trans}</span></span>
+        <div>
+          <button class="play-btn" data-idx="${idx}">🔊</button>
+        </div>`;
+      vocabList.appendChild(li);
+    });
+
+    // play buttons
+    vocabList.addEventListener('click', (e) => {
+      const b = e.target.closest('.play-btn');
+      if (!b) return;
+      const idx = +b.dataset.idx;
+      const rate = parseFloat(document.getElementById('voiceRate').value || 1);
+      speak(lesson.vocab[idx].word, lesson.fromLang, rate);
+    });
+
+    // quiz
+    const quizDiv = document.getElementById('quiz');
+    const feedback = document.getElementById('quiz-feedback');
+    quizDiv.innerHTML = '';
+    feedback.textContent = '';
+
+    // clone and shuffle quiz, limit to 4 questions for variety
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} }
+    const pool = lesson.quiz.slice();
+    shuffle(pool);
+    const quiz = pool.slice(0, Math.min(4, pool.length));
+
+    let score = 0;
+    quiz.forEach((q, qi) => {
+      const qDiv = document.createElement('div');
+      qDiv.className = 'question';
+      qDiv.innerHTML = `<p><strong>Q${qi+1}.</strong> ${q.q}</p>`;
+      q.options.forEach((opt, oi) => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.textContent = opt;
+        btn.dataset.correct = (oi === q.a) ? '1' : '0';
+        btn.addEventListener('click', () => {
+          // disable siblings
+          const siblings = Array.from(qDiv.querySelectorAll('.answer-btn'));
+          siblings.forEach(s => s.disabled = true);
+          if (oi === q.a) {
+            btn.classList.add('correct');
+            feedback.textContent = 'Bonne réponse ✔';
+            score++;
+          } else {
+            btn.classList.add('wrong');
+            feedback.textContent = `Mauvaise réponse — réponse correcte : ${q.options[q.a]}`;
+            // highlight correct
+            const correctBtn = siblings.find(s => s.dataset.correct === '1');
+            if (correctBtn) correctBtn.classList.add('correct');
+          }
+          // speak correct answer (in target lang)
+          speak(q.options[q.a], lesson.toLang, 1);
+        });
+        qDiv.appendChild(btn);
+      });
+      quizDiv.appendChild(qDiv);
+    });
+
+  } // end lesson page
+
+}); // DOMContentLoaded

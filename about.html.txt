@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>À propos — Bilingue Studio</title>
+  <link rel="icon" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container header-grid">
+      <div class="brand">
+        <img src="logo.svg" alt="Bilingue Studio" class="logo-img" />
+        <div class="brand-text">
+          <div class="site-title">Bilingue Studio</div>
+          <div class="slogan">Apprenez le français et l’anglais simplement.</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="index.html#lessons" class="nav-link">Leçons</a>
+        <a href="about.html" class="nav-link">À propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card about-card">
+      <h1>À propos</h1>
+      <p><strong>Bilingue Studio</strong> aide les adultes à apprendre le français et l'anglais à travers des leçons simples, claires et interactives.</p>
+      <p>Notre approche repose sur : pratique régulière, prononciation guidée, et quiz pour vérifier la compréhension.</p>
+      <p>Utilisez le site sur mobile ou ordinateur — il est conçu pour être pratique au travail et pendant vos déplacements.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year3"></span> Bilingue Studio — Prototype professionnel</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
+</html>

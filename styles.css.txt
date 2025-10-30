@@ -1,0 +1,68 @@
+:root{
+  --bg: #071428;        /* very dark blue */
+  --panel: #0b1e3d;     /* main navy */
+  --muted: #9fb4c9;
+  --accent: #2aa4f4;    /* bright blue */
+  --card: #0f2a44;
+  --surface: #071428;
+  --radius: 10px;
+  --container: 1100px;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Base */
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg), #041026);color:#e6f2ff;line-height:1.5}
+.container{max-width:var(--container);margin:0 auto;padding:20px}
+.topbar{background:var(--panel);border-bottom:1px solid rgba(255,255,255,0.04);position:sticky;top:0;z-index:60}
+.header-grid{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-img{width:48px;height:48px}
+.site-title{font-weight:600;font-size:1.05rem}
+.slogan{font-size:0.85rem;color:var(--muted)}
+.main-nav{display:flex;gap:12px}
+.nav-link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all .18s}
+.nav-link:hover{background:rgba(255,255,255,0.03);color:#fff}
+
+.hero{padding:28px 0;text-align:left}
+.hero h1{font-size:1.6rem;margin:6px 0}
+.lead{color:var(--muted);margin:8px 0 18px}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:500;transition:all .22s;box-shadow:0 6px 18px rgba(0,0,0,0.2)}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#4fc6ff);color:#031024}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 30px rgba(42,164,244,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn-outline:hover{background:rgba(255,255,255,0.02);transform:translateY(-2px)}
+
+/* lessons grid */
+.lessons{margin-top:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);padding:16px;border-radius:12px;color:#e8f7ff;text-decoration:none;display:flex;align-items:center;justify-content:center;min-height:72px;box-shadow:0 10px 25px rgba(2,6,23,0.6);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(2,6,23,0.8)}
+
+/* lesson page */
+.lesson-page .lesson-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+.controls-inline{display:flex;align-items:center;gap:10px}
+.lesson-content{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:18px}
+.card.vocab-card, .card.quiz-card, .card.about-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.vocab-list{list-style:none;padding:0;margin:0}
+.vocab-list li{display:flex;align-items:center;justify-content:space-between;padding:10px 6px;border-bottom:1px solid rgba(255,255,255,0.02)}
+.play-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:6px 10px;border-radius:8px;cursor:pointer}
+.quiz-area .question{margin-bottom:12px}
+.answer-btn{display:block;width:100%;text-align:left;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#e6f2ff;margin-top:8px;cursor:pointer;transition:transform .12s}
+.answer-btn:hover{transform:translateY(-3px)}
+.answer-btn.correct{background:rgba(76,175,80,0.12);border-color:rgba(76,175,80,0.3)}
+.answer-btn.wrong{background:rgba(244,67,54,0.08);border-color:rgba(244,67,54,0.2)}
+.feedback{color:var(--muted);margin-top:10px}
+
+/* about card */
+.about-card{padding:28px;text-align:left}
+
+/* responsive */
+@media (max-width:900px){
+  .lesson-content{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .logo-img{width:42px;height:42px}
+  .header-grid{padding:8px 0}
+}
