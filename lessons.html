@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French & English Studio</title>
+  <title>Leçons — French & English Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 
   <header>
     <h1>French & English Studio</h1>
     <nav>
-      <a href="index.html" class="active">Accueil</a>
-      <a href="lessons.html">Leçons</a>
+      <a href="index.html">Accueil</a>
+      <a href="lessons.html" class="active">Leçons</a>
       <a href="reservation.html">Réserver</a>
       <a href="about.html">À propos</a>
     </nav>
   </header>
 
-  <main class="home">
-    <section class="hero">
-      <h2>Apprenez le français et l’anglais simplement.</h2>
-      <p>Des leçons claires, interactives et accessibles à tous.</p>
-      <a href="lessons.html" class="btn-primary">Commencer maintenant</a>
-    </section>
+  <main>
+    <h2>Leçons bilingues</h2>
+
+    <div id="lessons-container" class="lesson-list"></div>
   </main>
 
   <footer>
