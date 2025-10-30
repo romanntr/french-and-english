@@ -16,7 +16,51 @@ document.addEventListener('DOMContentLoaded', ()=> {
       window.location.href = `lesson.html?dir=${dir}`;
     });
   }
-
+,
+'fr-en-numbers': {
+  title: 'Les nombres — Français → English',
+  fromLang: 'fr-FR',
+  toLang: 'en-US',
+  vocab: [
+    {word: 'Un', trans: 'One'},
+    {word: 'Deux', trans: 'Two'},
+    {word: 'Trois', trans: 'Three'},
+    {word: 'Quatre', trans: 'Four'},
+    {word: 'Cinq', trans: 'Five'},
+    {word: 'Six', trans: 'Six'},
+    {word: 'Sept', trans: 'Seven'},
+    {word: 'Huit', trans: 'Eight'},
+    {word: 'Neuf', trans: 'Nine'},
+    {word: 'Dix', trans: 'Ten'}
+  ],
+  quiz: [
+    {q: "Comment dit-on 'Deux' en anglais ?", options:['One','Two','Three','Four'], a:1},
+    {q: "Traduction : 'Five'", options:['Quatre','Cinq','Six','Sept'], a:1},
+    {q: "Comment dit-on 'Dix' ?", options:['Nine','Eight','Ten','Twelve'], a:2}
+  ]
+},
+'en-fr-numbers': {
+  title: 'Numbers — English → Français',
+  fromLang: 'en-US',
+  toLang: 'fr-FR',
+  vocab: [
+    {word: 'One', trans: 'Un'},
+    {word: 'Two', trans: 'Deux'},
+    {word: 'Three', trans: 'Trois'},
+    {word: 'Four', trans: 'Quatre'},
+    {word: 'Five', trans: 'Cinq'},
+    {word: 'Six', trans: 'Six'},
+    {word: 'Seven', trans: 'Sept'},
+    {word: 'Eight', trans: 'Huit'},
+    {word: 'Nine', trans: 'Neuf'},
+    {word: 'Ten', trans: 'Dix'}
+  ],
+  quiz: [
+    {q: "How to say 'Cinq' in English?", options:['Five','Four','Six','Ten'], a:0},
+    {q: "Traduction : 'Nine'", options:['Neuf','Huit','Dix','Sept'], a:0},
+    {q: "Which number means 'Trois'?", options:['Three','Two','Four','Five'], a:0}
+  ]
+}
   // Lessons data (bilingual)
   const lessons = {
     'fr-en': {
