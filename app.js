@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
 
-    // 🔢 Nouvelle leçon : Les nombres / Numbers
     'fr-en-numbers': {
       title: 'Les nombres — Français → English',
       fromLang: 'fr-FR',
@@ -91,14 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 🎧 Fonction pour lire un mot à voix haute
   function speak(text, lang) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
     speechSynthesis.speak(utterance);
   }
 
-  // 🧠 Récupération du paramètre d’URL (leçon choisie)
   const params = new URLSearchParams(window.location.search);
   const dir = params.get('dir');
   const lesson = lessons[dir];
@@ -114,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
       vocabList.appendChild(li);
     });
 
-    // Génération du quiz
     const quizContainer = document.getElementById('quiz');
     lesson.quiz.forEach((q, i) => {
       const div = document.createElement('div');
@@ -124,11 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.createElement('button');
         btn.textContent = opt;
         btn.onclick = () => {
-          if (j === q.a) {
-            btn.style.background = '#4CAF50';
-          } else {
-            btn.style.background = '#f44336';
-          }
+          if (j === q.a) btn.style.background = '#4CAF50';
+          else btn.style.background = '#f44336';
         };
         div.appendChild(btn);
       });
@@ -138,5 +131,4 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     document.getElementById('lesson-title').textContent = 'Leçon non trouvée';
   }
-
 });

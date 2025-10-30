@@ -1,42 +1,46 @@
-:root{
-  --bg:#ffffff;
-  --surface:#f4f6f8;
-  --accent:#0b3261;
-  --muted:#6b7280;
-  --card:#ffffff;
-  --radius:10px;
-  --container:1100px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--surface);color:#111827;line-height:1.5}
-.container{max-width:var(--container);margin:0 auto;padding:28px}
-.site-header{background:var(--card);border-bottom:1px solid #e6e9ef}
-.site-header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{margin:0;font-size:1.1rem;font-weight:700;color:var(--accent)}
-.nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-size:0.95rem}
-.hero{padding:40px 0;text-align:left}
-.title{font-size:1.5rem;margin:8px 0;color:#0f172a}
-.subtitle{color:var(--muted);margin-bottom:18px}
-.controls{display:flex;gap:10px;align-items:center;margin-bottom:12px}
-select{padding:8px;border-radius:6px;border:1px solid #d1d5db}
-.btn{padding:10px 14px;border-radius:8px;background:var(--accent);color:white;border:none;cursor:pointer}
-.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-.features{padding:18px 0}
-.feature-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.feature-list li{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef2f6;color:var(--muted)}
-.site-footer{padding:18px 0;text-align:center;color:var(--muted);border-top:1px solid #e6e9ef;background:var(--card);margin-top:28px}
-/* Lesson */
-.lesson-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px}
-.flashcards{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
-.flashcard{background:var(--card);padding:14px;border-radius:10px;min-width:220px;flex:1 1 220px;box-shadow:0 6px 14px rgba(12,18,36,0.04);border:1px solid #eef2f6}
-.flashcard .word{font-weight:700;font-size:1.05rem}
-.flashcard .trans{color:var(--muted);margin-top:6px}
-.play-btn{margin-top:8px;padding:8px 10px;border-radius:8px;background:#eef5fb;border:none;cursor:pointer}
-.quiz-card{margin-top:20px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 16px rgba(12,18,36,0.04)}
-#answers{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-.answer-btn{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;cursor:pointer;text-align:left}
-.answer-btn.correct{border-color:green;background:#ecffef}
-.answer-btn.wrong{border-color:red;background:#fff0f0}
-.feedback{margin-top:10px;color:var(--muted)}
-@media (max-width:640px){.site-header .container{flex-direction:column;gap:12px}.flashcards{flex-direction:column}}
+header {
+  background-color: #1e3d59;
+  color: white;
+  padding: 20px 10px;
+}
+h1 { margin: 0; }
+main { padding: 20px; }
+.lesson-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-top: 30px;
+}
+.btn {
+  background-color: #1e3d59;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn:hover { background-color: #305b83; }
+ul { list-style: none; padding: 0; }
+li { margin: 10px 0; }
+button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  border: none;
+  background: #305b83;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #666;
+}

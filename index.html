@@ -1,59 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>French&English — Apprendre le français et l'anglais</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilingue Studio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">French&English</h1>
-      <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="lesson.html">Leçon démo</a>
-      </nav>
-    </div>
+  <header>
+    <h1>Bilingue Studio</h1>
+    <p>Apprenez le français et l’anglais facilement</p>
   </header>
 
   <main>
-    <section class="hero container">
-      <h2 class="title">Apprenez le français et l'anglais — Sérieux & Professionnel</h2>
-      <p class="subtitle">Leçons courtes, vocabulaire ciblé, prononciation et mini-quiz — conçu pour adultes.</p>
-
-      <div class="controls">
-        <label for="direction">Direction :</label>
-        <select id="direction" aria-label="Choisir la direction de la leçon">
-          <option value="fr-en">Français → English</option>
-          <option value="en-fr">English → Français</option>
-        </select>
-        <button id="startBtn" class="btn">Commencer la leçon</button>
-      </div>
-
-      <div class="cta">
-        <a class="btn outline" href="lesson.html?dir=fr-en">Exemple FR → EN</a>
-        <a class="btn outline" href="lesson.html?dir=en-fr">Exemple EN → FR</a>
-      </div>
-    </section>
-
-    <section class="features container">
-      <h3>Fonctionnalités</h3>
-      <ul class="feature-list">
-        <li>Leçons bilingues structurées</li>
-        <li>Flashcards avec synthèse vocale</li>
-        <li>Mini-quiz adaptatifs</li>
-        <li>Design responsive, adapté aux professionnels</li>
-      </ul>
-    </section>
+    <h2>Choisissez votre leçon</h2>
+    <div class="lesson-buttons">
+      <a href="lesson.html?dir=fr-en" class="btn">Salutations (Fr → En)</a>
+      <a href="lesson.html?dir=en-fr" class="btn">Salutations (En → Fr)</a>
+      <a href="lesson.html?dir=fr-en-numbers" class="btn">Les nombres (Fr → En)</a>
+      <a href="lesson.html?dir=en-fr-numbers" class="btn">Les nombres (En → Fr)</a>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> French&English — Prototype professionnel</p>
-    </div>
+  <footer>
+    <p>© 2025 Bilingue Studio</p>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
